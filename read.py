@@ -6,9 +6,12 @@
 #strip() 除掉換行符號
 #split(',') 使用,做分割
 
+
+
+#讓使用者輸入
 products = []
 
-while True:   #讓使用者輸入
+while True:   
 	name = input('請輸入體重: ')
 	if name == 'q':
 		break
@@ -20,3 +23,6 @@ while True:   #讓使用者輸入
 print(products)	
 
 
+#印出所有紀錄
+for line in products:
+	print('您的體重為:', line[0], '您的體脂為:', line[1])
