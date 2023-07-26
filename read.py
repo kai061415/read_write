@@ -26,3 +26,10 @@ print(products)
 #印出所有紀錄
 for line in products:
 	print('您的體重為:', line[0], '您的體脂為:', line[1])
+
+
+#寫入檔案
+with open('test.csv', 'w', encoding='utf-8') as f:
+	#f.write('體重, 體脂\n')
+	for line in products:
+		f.write(line[0] + ',' + line[1] + '\n')	
