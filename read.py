@@ -6,11 +6,17 @@
 #strip() 除掉換行符號
 #split(',') 使用,做分割
 
-
-
-#讓使用者輸入
 products = []
 
+#讀取檔案
+with open('test.csv', 'r', encoding='utf-8') as f:
+	for line in f:
+		if '體重,體脂' in line:
+			continue
+		s = line.strip().split(',')
+		products.append(s)
+
+#讓使用者輸入
 while True:   
 	name = input('請輸入體重: ')
 	if name == 'q':
@@ -30,6 +36,6 @@ for line in products:
 
 #寫入檔案
 with open('test.csv', 'w', encoding='utf-8') as f:
-	#f.write('體重, 體脂\n')
+	f.write('體重, 體脂\n')  #新增欄位
 	for line in products:
 		f.write(line[0] + ',' + line[1] + '\n')	
